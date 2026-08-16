@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Color tokens (Mapiq brand) ---- */
+  --color-ink: #0b1a24;
+  --color-surface: #0f2029;
+  --color-surface-2: #152c38;
+  --color-surface-3: #1b3542;
+  --color-line: rgba(234, 242, 245, 0.08);
+  --color-line-strong: rgba(234, 242, 245, 0.14);
+  --color-teal: #2fe6c4;
+  --color-teal-dim: #1faf95;
+  --color-marker: #ff7a45;
+  --color-marker-dim: #e56636;
+  --color-text: #eaf2f5;
+  --color-muted: #8aa0af;
+  --color-muted-2: #5e7688;
+
+  /* ---- Typography ---- */
+  --font-sans: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* ---- Radius ---- */
+  --radius-card: 14px;
+  --radius-card-lg: 22px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Numbers / coordinates always render LTR even inside an RTL page */
+.ltr-nums {
+  direction: ltr;
+  font-family: var(--font-mono);
+  unicode-bidi: isolate;
+}
+
+/* Background cartographic grid, reused behind the whole page */
+.bg-cartographic-grid {
+  background-image:
+    linear-gradient(var(--color-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 90%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 90%);
+}
+
+/* Scroll reveal utility, toggled by IntersectionObserver in components */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.6, 0.2, 1),
+    transform 0.7s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
