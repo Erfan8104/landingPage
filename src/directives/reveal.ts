@@ -1,33 +1,31 @@
-import type { Directive } from 'vue'
+import type { Directive } from "vue";
 
-/**
- * v-reveal
- * Adds the `reveal` class immediately and toggles `in-view` once the
- * element scrolls into the viewport. Used for the subtle fade/slide-in
- * treatment across landing page sections (see frontend-design guidance:
- * motion should be deliberate, not decorative).
- */
 const observer = new IntersectionObserver(
   (entries) => {
     for (const entry of entries) {
       if (entry.isIntersecting) {
-        entry.target.classList.add('in-view')
-        observer.unobserve(entry.target)
+        entry.target.classList.add("in-view");
+      } else {
+        // Remove class when scrolling past so it can re-trigger next time
+        entry.target.classList.remove("in-view");
       }
     }
   },
-  { threshold: 0.15 },
-)
+  {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px", // Triggers slightly before it hits the bottom of the screen
+  },
+);
 
 export const vReveal: Directive<HTMLElement, number | void> = {
   mounted(el, binding) {
-    el.classList.add('reveal')
-    if (typeof binding.value === 'number') {
-      el.style.transitionDelay = `${binding.value}ms`
+    el.classList.add("reveal");
+    if (typeof binding.value === "number") {
+      el.style.transitionDelay = `${binding.value}ms`;
     }
-    observer.observe(el)
+    observer.observe(el);
   },
   unmounted(el) {
-    observer.unobserve(el)
+    observer.unobserve(el);
   },
-}
+};

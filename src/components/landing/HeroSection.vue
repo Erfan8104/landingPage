@@ -1,28 +1,35 @@
 <script setup lang="ts">
-import { ArrowLeft, Search, PenTool } from 'lucide-vue-next'
-import MapVisual from './MapVisual.vue'
+import { ArrowLeft, Search, PenTool } from "lucide-vue-next";
+import MapVisual from "./MapVisual.vue";
 </script>
 
 <template>
   <section class="relative py-14 sm:py-20 lg:py-24">
-    <div class="mx-auto grid max-w-[1180px] items-center gap-12 px-5 sm:px-7 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
+    <div
+      class="mx-auto grid max-w-[1180px] items-center gap-12 px-5 sm:px-7 lg:grid-cols-[1.05fr_1fr] lg:gap-14"
+    >
       <div>
         <span
           class="mb-6 inline-flex items-center gap-2 rounded-full border border-teal/25 bg-teal/10 px-3.5 py-1.5 font-mono text-[0.76rem] tracking-wide text-teal"
         >
-          <span class="size-1.5 animate-pulse rounded-full bg-teal shadow-[0_0_0_4px_rgba(47,230,196,0.18)]" />
+          <span
+            class="size-1.5 animate-pulse rounded-full bg-teal shadow-[0_0_0_4px_rgba(47,230,196,0.18)]"
+          />
           پلتفرم نقشه‌محور
         </span>
 
-        <h1 class="mb-5 text-[2.1rem] font-extrabold leading-[1.22] tracking-tight sm:text-[2.8rem] lg:text-[3.55rem]">
+        <h1
+          class="mb-5 text-[1.15rem] font-extrabold leading-[1.35] tracking-tight sm:text-[1.5rem] lg:text-[1.9rem]"
+        >
           موقعیت را پیدا کن،<br />
-          <span class="text-teal">محدوده را ترسیم کن</span><br />
+          <span class="">محدوده را ترسیم کن</span><br />
           و با دیگران به اشتراک بگذار.
         </h1>
 
         <p class="mb-8 max-w-[520px] text-[1.08rem] text-muted">
-          Mapiq به شما کمک می‌کند تا روی نقشه جست‌وجو کنید، نقطه و محدوده موردنظرتان را با
-          ابزارهای ترسیم مشخص کنید و اطلاعات مکانی را به‌سادگی با دیگران به اشتراک بگذارید.
+          Mapiq به شما کمک می‌کند تا روی نقشه جست‌وجو کنید، نقطه و محدوده
+          موردنظرتان را با ابزارهای ترسیم مشخص کنید و اطلاعات مکانی را به‌سادگی
+          با دیگران به اشتراک بگذارید.
         </p>
 
         <div class="mb-10 flex flex-wrap items-center gap-3.5">
@@ -53,7 +60,9 @@ import MapVisual from './MapVisual.vue'
         </div>
       </div>
 
-      <div class="order-first mx-auto w-full max-w-[440px] lg:order-last lg:max-w-none">
+      <div
+        class="order-first mx-auto w-full max-w-[440px] lg:order-last lg:max-w-none"
+      >
         <MapVisual :delay="400" />
       </div>
     </div>
