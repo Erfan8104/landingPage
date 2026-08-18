@@ -48,7 +48,6 @@ function closeMenu() {
       </a>
 
       <!-- Desktop Navigation -->
-
       <nav class="hidden items-center gap-8 md:flex">
         <!-- City Selection Dropdown (Hover-based) -->
         <div class="relative group py-2">
