@@ -9,13 +9,12 @@ const navLinks: NavLink[] = [
   { label: "نحوه کار", href: "#how" },
   { label: "دموی نقشه", href: "#demo" },
 ];
-
 const cityLinks = [
-  { label: "نقشه تهران", href: "https://mapiq.ir" },
-  { label: "نقشه مشهد", href: "https://mapiq.ir" },
-  { label: "نقشه اصفهان", href: "https://mapiq.ir" },
-  { label: "نقشه شیراز", href: "https://mapiq.ir" },
-  { label: "نقشه تبریز", href: "https://mapiq.ir" },
+  { label: "نقشه تهران", href: "https://mapiq.ir?lat=35.6892&lng=51.3890" },
+  { label: "نقشه مشهد", href: "https://mapiq.ir?lat=36.2972&lng=59.6067" },
+  { label: "نقشه اصفهان", href: "https://mapiq.ir?lat=32.6546&lng=51.6680" },
+  { label: "نقشه شیراز", href: "https://mapiq.ir?lat=29.5917&lng=52.5836" },
+  { label: "نقشه تبریز", href: "https://mapiq.ir?lat=38.0800&lng=46.2919" },
   { label: "نقشه سایر شهرهای ایران", href: "https://mapiq.ir" },
 ];
 
